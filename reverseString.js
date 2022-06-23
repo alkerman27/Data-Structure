@@ -4,7 +4,7 @@
 
 
 //naive approach
-const myNameInReverse = 'Hi My name is MarkraM'
+const myNameInReverse = 'Hi My name is Mark'
 
 
 function reverse(str) {
@@ -19,5 +19,24 @@ function reverse(str) {
     return backwards.join('');
 }
 
-console.log(reverse(myNameInReverse));
+//readable approach
+function reverse2(str) {
+  return str.split('').reverse().join('')
+}
+
+//modern approach
+const reverse3 = str => str.split('').reverse().join('');
+
+//spread operator
+
+const reverse4 = str => [...str].reverse().join('')
+
+
+
+console.log('naive approach: ',reverse(myNameInReverse));
+console.log('readble approach: ',reverse2(myNameInReverse));
+console.log('modern approach: ',reverse3(myNameInReverse));
+console.log('spread operator: ', reverse4(myNameInReverse));
+
+
 
