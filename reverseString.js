@@ -8,6 +8,7 @@ const myNameInReverse = 'Hi My name is Mark'
 
 
 function reverse(str) {
+  console.log(typeof str);
   if(!str || str.length < 2 || typeof str !== 'string') {
     return 'Invalid Input'
   }
