@@ -63,14 +63,14 @@ class LinkedList {
     leader.next = newNode;
     newNode.next = holdingPointer
     this.length++;
-    return this;
+    return this.printList();
   }
   remove(index) {
     const leader = this.traverseToIndex(index - 1);
     const unwantedNode = leader.next;
     leader.next = unwantedNode.next;
     this.length--;
-    return this;
+    return this.printList();
   }
   traverseToIndex(index) {
     let counter = 0;
@@ -81,6 +81,42 @@ class LinkedList {
     }
     return currentNode;
   }
+  reverse() {
+    if(!this.head.next) {
+      return this.head;
+    }
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+    let counter1 = 1
+    let counter2 = 1
+    let counter3 = 1
+    let counter4 = 1
+    while(second) {
+
+      //console log the result : 
+      // if(second || temp || second.next || first !== null) {
+      //   console.log(`LOOP first${counter1++}: `, first);
+      //   console.log(`LOOP second${counter2++}: `, second);
+      //   console.log(`LOOP second.next${counter3++}: `, second.next);
+      // } else {
+      //   return 'end of line';
+      // }
+      
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+
+      //extension of console log the result:
+      // console.log(`LOOP temp${counter4++}: `, temp);
+   
+      // console.log('----------------------------------------------');
+    }
+    this.head.next = null;
+    this.head = first;
+    return this.printList()
+  }
 }
 
 let myLinkedList = new LinkedList(10);
@@ -88,3 +124,8 @@ console.log(myLinkedList.append(5));
 myLinkedList.append(16);
 console.log(myLinkedList.prepend(7));
 console.log(myLinkedList.insert(200, 11));
+console.log(myLinkedList.insert(4, 99));
+console.log(myLinkedList.insert(20, 109));
+console.log(myLinkedList.remove(2));
+console.log(myLinkedList.reverse());
+
