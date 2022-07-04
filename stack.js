@@ -1,3 +1,5 @@
+
+//LILO - Last In Last Out
 class Node {
   constructor(value) {
     this.value = value,
@@ -57,3 +59,15 @@ console.log(myStack.pop());
 console.log(myStack.pop());
 console.log(myStack.pop());
 console.log(myStack.peek());
+
+//
+
+const myStack1 = [];
+myStack1.push('one')
+myStack1.push('two')
+myStack1.push('three')
+myStack1.push('four')
+myStack1.pop()
+const stacks = myStack1.map(e => e)
+console.log(stacks);
+myStack1.forEach(e => console.log(e))
