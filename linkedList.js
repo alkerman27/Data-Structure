@@ -88,25 +88,16 @@ class LinkedList {
     let first = this.head;
     this.tail = this.head;
     let second = first.next;
-    let counter1 = 1
-    let counter2 = 1
-    let counter3 = 1
-    let counter4 = 1
     while(second) {
+      let temp = second.next;
 
-      //console log the result : 
-      // if(second || temp || second.next || first !== null) {
-      //   console.log(`LOOP first${counter1++}: `, first);
-      //   console.log(`LOOP second${counter2++}: `, second);
-      //   console.log(`LOOP second.next${counter3++}: `, second.next);
-      // } else {
-      //   return 'end of line';
-      // }
-      
-      const temp = second.next;
-      second.next = first;
-      first = second;
-      second = temp;
+      //---- first solution
+      // second.next = first;
+      // first = second;
+      // second = temp;
+
+      //---- another way of solving or second solution by destructuring
+      [second.next, first, temp, second] = [first, second,  second.next, temp]
 
       //extension of console log the result:
       // console.log(`LOOP temp${counter4++}: `, temp);
